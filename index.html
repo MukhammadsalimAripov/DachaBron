@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дача Брон - Аренда дач и вилл в Узбекистане (Чарвак, Чимган)</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-200">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="navbar-glass sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-blue-600 dark:bg-white text-white dark:text-black flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">
+            🏠
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight text-blue-600 dark:text-white block leading-none">
+              DACHA <span class="text-slate-900 dark:text-zinc-300">BRON</span>
+            </span>
+            <span class="text-[10px] text-slate-500 dark:text-zinc-400 font-medium tracking-wider uppercase mt-1 block">
+              Чарвак • Чимган • Виллы
+            </span>
+          </div>
+        </a>
+
+        <!-- 5 Main Navigation Links with Hover Dropdown on 'Дачи' -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          
+          <!-- 1. Главная -->
+          <a href="#home" onclick="navigateTo('home')" data-target="home" class="nav-link px-3.5 py-2 rounded-xl text-sm font-semibold transition text-blue-600 dark:text-white" data-i18n="navHome">
+            Главная
+          </a>
+
+          <!-- 2. Дачи (With Hover Dropdown mini-window) -->
+          <div class="relative nav-dropdown-wrapper py-2">
+            <a href="#catalog" onclick="navigateTo('catalog')" data-target="catalog" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition text-slate-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white flex items-center gap-1.5">
+              <span data-i18n="navDachas">Дачи</span>
+              <svg class="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+
+            <!-- Mini Dropdown Window -->
+            <div class="nav-dropdown absolute left-0 top-full w-56 rounded-2xl p-2 z-50">
+              <a href="#catalog?cat=all" onclick="navigateTo('catalog', { category: 'all' })" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-600 dark:hover:text-white transition">
+                <span>🏡</span>
+                <span data-i18n="catAll">Все дачи</span>
+              </a>
+              <a href="#catalog?cat=villa" onclick="navigateTo('catalog', { category: 'villa' })" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-600 dark:hover:text-white transition">
+                <span>🏰</span>
+                <span data-i18n="catVillas">Виллы</span>
+              </a>
+              <a href="#catalog?cat=bolshiye" onclick="navigateTo('catalog', { category: 'bolshiye' })" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-600 dark:hover:text-white transition">
+                <span>🏯</span>
+                <span data-i18n="catLarge">Большие дачи</span>
+              </a>
+              <a href="#catalog?cat=sredniye" onclick="navigateTo('catalog', { category: 'sredniye' })" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-600 dark:hover:text-white transition">
+                <span>🏡</span>
+                <span data-i18n="catMedium">Средние дачи</span>
+              </a>
+              <a href="#catalog?cat=malenkiye" onclick="navigateTo('catalog', { category: 'malenkiye' })" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-600 dark:hover:text-white transition">
+                <span>🏕️</span>
+                <span data-i18n="catSmall">Маленькие дачи</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. О нас -->
+          <a href="#about" onclick="navigateTo('about')" data-target="about" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition text-slate-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white" data-i18n="navAbout">
+            О нас
+          </a>
+
+          <!-- 4. Отзывы -->
+          <a href="#reviews" onclick="navigateTo('reviews')" data-target="reviews" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition text-slate-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white" data-i18n="navReviews">
+            Отзывы
+          </a>
+
+          <!-- 5. Контакты -->
+          <a href="#contacts" onclick="navigateTo('contacts')" data-target="contacts" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition text-slate-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white" data-i18n="navContacts">
+            Контакты
+          </a>
+        </nav>
+
+        <!-- Right Side Controls (Language, Theme, Auth) -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Language Switcher (RU / UZ / EN) -->
+          <div class="relative">
+            <select id="langSelect" class="bg-slate-100 dark:bg-zinc-800 text-xs font-bold py-1.5 px-2.5 rounded-xl border border-slate-200 dark:border-zinc-700 text-slate-800 dark:text-zinc-200 focus:outline-none cursor-pointer">
+              <option value="ru">🇷🇺 RU</option>
+              <option value="uz">🇺🇿 UZ</option>
+              <option value="en">🇬🇧 EN</option>
+            </select>
+          </div>
+
+          <!-- Theme Toggle (Light: Blue & White / Dark: Black & White) -->
+          <button id="themeToggleBtn" type="button" aria-label="Toggle theme" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-zinc-700 transition">
+            <!-- Injected by app.js -->
+          </button>
+
+          <!-- User Auth Area -->
+          <div id="navUserArea">
+            <!-- Injected by app.js -->
+          </div>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button onclick="document.getElementById('mobileNav').classList.toggle('hidden')" class="md:hidden p-2 rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNav" class="hidden md:hidden border-t border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 pt-3 pb-6 space-y-2">
+      <a href="#home" onclick="navigateTo('home'); document.getElementById('mobileNav').classList.add('hidden')" class="block py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200" data-i18n="navHome">Главная</a>
+      <a href="#catalog" onclick="navigateTo('catalog'); document.getElementById('mobileNav').classList.add('hidden')" class="block py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200" data-i18n="navDachas">Дачи</a>
+      <div class="pl-4 space-y-1">
+        <a href="#catalog?cat=villa" onclick="navigateTo('catalog', { category: 'villa' }); document.getElementById('mobileNav').classList.add('hidden')" class="block py-1 text-xs text-slate-600 dark:text-zinc-400" data-i18n="catVillas">Виллы</a>
+        <a href="#catalog?cat=bolshiye" onclick="navigateTo('catalog', { category: 'bolshiye' }); document.getElementById('mobileNav').classList.add('hidden')" class="block py-1 text-xs text-slate-600 dark:text-zinc-400" data-i18n="catLarge">Большие дачи</a>
+        <a href="#catalog?cat=sredniye" onclick="navigateTo('catalog', { category: 'sredniye' }); document.getElementById('mobileNav').classList.add('hidden')" class="block py-1 text-xs text-slate-600 dark:text-zinc-400" data-i18n="catMedium">Средние дачи</a>
+        <a href="#catalog?cat=malenkiye" onclick="navigateTo('catalog', { category: 'malenkiye' }); document.getElementById('mobileNav').classList.add('hidden')" class="block py-1 text-xs text-slate-600 dark:text-zinc-400" data-i18n="catSmall">Маленькие дачи</a>
+      </div>
+      <a href="#about" onclick="navigateTo('about'); document.getElementById('mobileNav').classList.add('hidden')" class="block py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200" data-i18n="navAbout">О нас</a>
+      <a href="#reviews" onclick="navigateTo('reviews'); document.getElementById('mobileNav').classList.add('hidden')" class="block py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200" data-i18n="navReviews">Отзывы</a>
+      <a href="#contacts" onclick="navigateTo('contacts'); document.getElementById('mobileNav').classList.add('hidden')" class="block py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200" data-i18n="navContacts">Контакты</a>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main id="mainContent" class="flex-grow">
+    
+    <!-- ----------------- PAGE 1: HOME (ГЛАВНАЯ) ----------------- -->
+    <div id="page-home" class="page-view">
+      
+      <!-- HERO SECTION -->
+      <section class="relative overflow-hidden bg-gradient-to-b from-blue-50/60 via-white to-white dark:from-zinc-950 dark:via-black dark:to-black py-16 md:py-24 border-b border-slate-100 dark:border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-zinc-800 text-blue-700 dark:text-zinc-200 text-xs font-semibold tracking-wide">
+                <span>✨</span>
+                <span>Премиальный отдых в горах Узбекистана</span>
+              </div>
+
+              <!-- Main Hero Title requested: Найдите дачу на свой вкус -->
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                <span data-i18n="heroTitle">Найдите дачу на свой вкус</span>
+              </h1>
+
+              <p class="text-base sm:text-lg text-slate-600 dark:text-zinc-400 max-w-2xl leading-relaxed" data-i18n="heroSubtitle">
+                Лучшие горные виллы, коттеджи и дома отдыха в Чарваке, Чимгане и Бричмулле с гарантией чистоты, безопасности и комфорта.
+              </p>
+
+              <!-- Main Action Button requested: Смотреть дачи -> переводит на каталог -->
+              <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                <button onclick="navigateTo('catalog')" class="btn-primary w-full sm:w-auto text-base py-3.5 px-8 shadow-lg shadow-blue-500/20 dark:shadow-none">
+                  <span data-i18n="heroBtn">Смотреть дачи</span>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                </button>
+                <a href="#ai-finder" class="btn-outline w-full sm:w-auto text-base py-3.5 px-6">
+                  <span>⚡ AI-подбор дачи</span>
+                </a>
+              </div>
+
+              <!-- Stats preview -->
+              <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 dark:border-zinc-800">
+                <div>
+                  <div class="text-2xl font-black text-blue-600 dark:text-white">120+</div>
+                  <div class="text-xs text-slate-500 dark:text-zinc-400">Проверенных дач</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-black text-blue-600 dark:text-white">100%</div>
+                  <div class="text-xs text-slate-500 dark:text-zinc-400">Гарантия брони</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-black text-blue-600 dark:text-white">24/7</div>
+                  <div class="text-xs text-slate-500 dark:text-zinc-400">Поддержка гостей</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Image Showcase -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-800 aspect-[4/3]">
+                  <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="Villa Charvak" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-5 left-5 right-5 text-white">
+                    <span class="text-xs font-bold uppercase tracking-wider bg-blue-600 px-2 py-0.5 rounded">Топ выбор</span>
+                    <h3 class="text-lg font-bold mt-1">Вилла Чарвак Панорама Luxury</h3>
+                    <p class="text-xs text-slate-200">Бассейн с подогревом • Сауна • Чарвакское море</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- AI ASSISTANT SECTION (in header/top as requested: "в header ai kotoriy budet pokazivat dachi na cvoy vkus") -->
+      <section id="ai-finder" class="py-12 bg-white dark:bg-zinc-950 border-b border-slate-100 dark:border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="bg-gradient-to-br from-blue-50 via-white to-blue-100/50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 p-6 sm:p-10 rounded-3xl border border-blue-200/80 dark:border-zinc-700 shadow-xl">
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+              <div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white dark:bg-white dark:text-black text-xs font-bold tracking-wide mb-2">
+                  <span>🤖</span>
+                  <span>AI DACHA ENGINE</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white" data-i18n="aiTitle">
+                  AI Помощник: Подбор дачи на ваш вкус
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-zinc-400 mt-1" data-i18n="aiSubtitle">
+                  Укажите свои пожелания, и искусственный интеллект мгновенно найдет идеальный вариант для вашего отдыха.
+                </p>
+              </div>
+            </div>
+
+            <!-- AI Filter Controls Form -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              
+              <!-- 1. Guests -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400" data-i18n="aiGuestsLabel">Количество гостей:</label>
+                <select id="aiGuestsInput" class="w-full text-sm font-semibold p-3 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500">
+                  <option value="4">До 4 гостей (Маленькая)</option>
+                  <option value="8">До 8-10 гостей (Средняя)</option>
+                  <option value="14" selected>10-15 гостей (Большая / Вилла)</option>
+                  <option value="20">15-20+ гостей (Праздник / Мега-дача)</option>
+                </select>
+              </div>
+
+              <!-- 2. Location -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400" data-i18n="aiLocationLabel">Желаемая локация:</label>
+                <select id="aiLocationInput" class="w-full text-sm font-semibold p-3 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500">
+                  <option value="" data-i18n="aiAny">Любая локация (Все районы)</option>
+                  <option value="Чарвак">Чарвак (Вид на море)</option>
+                  <option value="Чимган">Чимган (Свежий горный воздух)</option>
+                  <option value="Бричмулла">Бричмулла (Тишина и пейзажи)</option>
+                  <option value="Бочка">Бочка (Близко к ресторанам)</option>
+                  <option value="Хумсан">Хумсан (Хвойный лес и родники)</option>
+                  <option value="Юсуфхона">Юсуфхона (Рядом с пляжем)</option>
+                </select>
+              </div>
+
+              <!-- 3. Budget -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between items-center">
+                  <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400" data-i18n="aiBudgetLabel">Бюджет ($ в сутки):</label>
+                  <span id="aiBudgetValue" class="text-xs font-extrabold text-blue-600 dark:text-white">$600</span>
+                </div>
+                <input id="aiBudgetInput" type="range" min="100" max="1000" step="50" value="600" class="w-full h-2 bg-slate-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                <div class="flex justify-between text-[10px] text-slate-400">
+                  <span>$100</span>
+                  <span>$500</span>
+                  <span>$1000+</span>
+                </div>
+              </div>
+
+              <!-- 4. Top Feature -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400" data-i18n="aiFeatureLabel">Главное удобство:</label>
+                <select id="aiFeatureInput" class="w-full text-sm font-semibold p-3 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500">
+                  <option value="">Любые удобства</option>
+                  <option value="Бассейн">Теплый бассейн / Инфинити</option>
+                  <option value="Сауна">Сауна / Хаммам</option>
+                  <option value="Бильярд">Бильярд / Караоке</option>
+                  <option value="BBQ">Зона барбекю и казан</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Submit buttons -->
+            <div class="mt-6 flex flex-wrap items-center justify-end gap-3">
+              <button onclick="resetAIPicker()" class="btn-outline text-xs py-2 px-4" data-i18n="aiResetBtn">
+                Сбросить
+              </button>
+              <button onclick="runAIPicker()" class="btn-primary text-sm py-2.5 px-6 shadow-md shadow-blue-500/20">
+                <span>⚡</span>
+                <span data-i18n="aiFindBtn">Подобрать идеальную дачу</span>
+              </button>
+            </div>
+
+            <!-- AI Matches Container (Injected by JS) -->
+            <div id="aiResultsContainer" class="hidden mt-6"></div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FEATURED DACHAS SECTION -->
+      <section class="py-16 bg-slate-50/50 dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Популярный выбор</span>
+              <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Топ дач этого сезона</h2>
+            </div>
+            <a href="#catalog" onclick="navigateTo('catalog')" class="text-sm font-bold text-blue-600 dark:text-white hover:underline flex items-center gap-1 mt-3 sm:mt-0">
+              <span data-i18n="heroBtn">Смотреть дачи</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Featured Cards Grid -->
+          <div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Cards rendered by app.js -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- WHY US / BENEFITS -->
+      <section class="py-16 bg-white dark:bg-zinc-950 border-t border-slate-100 dark:border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-12">Почему выбирают Dacha Bron?</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div class="p-6 rounded-2xl bg-blue-50/50 dark:bg-zinc-900 border border-blue-100 dark:border-zinc-800">
+              <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl mb-4">
+                🛡️
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">100% Реальные фото и проверка</h3>
+              <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                Каждая дача и вилла лично инспектируется нашими менеджерами. Вы получаете именно то, что видите на фотографиях.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-blue-50/50 dark:bg-zinc-900 border border-blue-100 dark:border-zinc-800">
+              <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl mb-4">
+                🔒
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Прозрачное бронирование</h3>
+              <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                Никаких скрытых платежей или посреднических наценок. Прямая фиксация дат и бронь с отслеживанием статуса в реальном времени.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-blue-50/50 dark:bg-zinc-900 border border-blue-100 dark:border-zinc-800">
+              <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl mb-4">
+                🌟
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Консьерж-сервис 24/7</h3>
+              <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                Организуем трансфер из Ташкента, заказ поваров для плова и шашлыка, уборку и любые дополнительные пожелания.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ----------------- PAGE 2: CATALOG (ДАЧИ) ----------------- -->
+    <div id="page-catalog" class="page-view hidden py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Catalog Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+          <div>
+            <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight" data-i18n="catAll">Каталог всех дач</h1>
+            <p class="text-sm text-slate-500 dark:text-zinc-400 mt-1">
+              Выберите категорию или просмотрите все доступные варианты для отдыха
+            </p>
+          </div>
+
+          <!-- Category Filter Buttons Pill Bar -->
+          <div class="flex flex-wrap gap-2">
+            <button onclick="filterCatalogByCategory('all')" data-category="all" class="cat-filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-white dark:text-black shadow-sm" data-i18n="catAll">
+              Все дачи
+            </button>
+            <button onclick="filterCatalogByCategory('villa')" data-category="villa" class="cat-filter-btn px-4 py-2 rounded-xl text-sm font-medium transition bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-300" data-i18n="catVillas">
+              Виллы
+            </button>
+            <button onclick="filterCatalogByCategory('bolshiye')" data-category="bolshiye" class="cat-filter-btn px-4 py-2 rounded-xl text-sm font-medium transition bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-300" data-i18n="catLarge">
+              Большие дачи
+            </button>
+            <button onclick="filterCatalogByCategory('sredniye')" data-category="sredniye" class="cat-filter-btn px-4 py-2 rounded-xl text-sm font-medium transition bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-300" data-i18n="catMedium">
+              Средние дачи
+            </button>
+            <button onclick="filterCatalogByCategory('malenkiye')" data-category="malenkiye" class="cat-filter-btn px-4 py-2 rounded-xl text-sm font-medium transition bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-300" data-i18n="catSmall">
+              Маленькие дачи
+            </button>
+          </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Cards rendered by app.js -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ----------------- PAGE 3: ABOUT US (О НАС) ----------------- -->
+    <div id="page-about" class="page-view hidden py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400" data-i18n="navAbout">О нас</span>
+          <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Dacha Bron — Ваш надежный проводник в мир горного отдыха</h1>
+          <p class="text-base text-slate-600 dark:text-zinc-400 mt-4 leading-relaxed">
+            Мы объединяем лучшие загородные резиденции, виллы и уютные коттеджи в Бостанлыкском районе Ташкентской области. Наша миссия — сделать процесс аренды простым, прозрачным и комфортным.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+          <div class="rounded-3xl overflow-hidden shadow-xl aspect-video">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" alt="About Resort" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">От семейного уюта до грандиозных торжеств</h3>
+            <p class="text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
+              В нашей базе представлены как компактные A-Frame домики для романтического отдыха вдвоем, так и роскошные 6-спальные виллы с инфинити-бассейнами, саунами и бильярдными залами для праздников и корпоративов.
+            </p>
+            <ul class="text-xs text-slate-600 dark:text-zinc-400 space-y-2">
+              <li class="flex items-center gap-2">✓ Индивидуальный подбор с помощью AI-ассистента</li>
+              <li class="flex items-center gap-2">✓ Фиксированная цена без скрытых комиссий</li>
+              <li class="flex items-center gap-2">✓ Поддержка гостей на протяжении всего срока пребывания</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ----------------- PAGE 4: REVIEWS (ОТЗЫВЫ) ----------------- -->
+    <div id="page-reviews" class="page-view hidden py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400" data-i18n="reviewsTitle">Отзывы клиентов</span>
+          <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Что говорят наши гости</h1>
+          <p class="text-sm text-slate-500 dark:text-zinc-400 mt-2">
+            Более 1,500 счастливых семей и компаний провели незабываемые выходные с Dacha Bron
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
+            <p class="text-xs text-slate-700 dark:text-zinc-300 italic mb-4 leading-relaxed">
+              "Бронировали виллу на Чарваке на день рождения. Вид просто космический, бассейн с подогревом работал безупречно, в доме всё сияло чистотой. Очень удобный сервис!"
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs">СА</div>
+              <div>
+                <div class="text-xs font-bold text-slate-900 dark:text-white">Сардор Алимов</div>
+                <div class="text-[10px] text-slate-400">Вилла Чарвак Панорама</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
+            <p class="text-xs text-slate-700 dark:text-zinc-300 italic mb-4 leading-relaxed">
+              "Быстро подобрали дачу через AI-помощник под наш бюджет и на 10 человек. Администратор сразу перезвонил после брони. Всё на высшем уровне!"
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">МК</div>
+              <div>
+                <div class="text-xs font-bold text-slate-900 dark:text-white">Малика Каримова</div>
+                <div class="text-[10px] text-slate-400">Средняя Дача Юсуфхона</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
+            <p class="text-xs text-slate-700 dark:text-zinc-300 italic mb-4 leading-relaxed">
+              "Отдыхали в треугольном A-Frame домике в Чимгане. Теплая купель фурако под звездами — это сказка! Обязательно приедем снова зимой."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-xs">НУ</div>
+              <div>
+                <div class="text-xs font-bold text-slate-900 dark:text-white">Нигина Умарова</div>
+                <div class="text-[10px] text-slate-400">A-Frame Чимган</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ----------------- PAGE 5: CONTACTS (КОНТАКТЫ) ----------------- -->
+    <div id="page-contacts" class="page-view hidden py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400" data-i18n="navContacts">Контакты</span>
+          <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Свяжитесь с нами</h1>
+          <p class="text-sm text-slate-500 dark:text-zinc-400 mt-2">
+            Мы на связи 24/7 и готовы ответить на любые ваши вопросы по аренде дач
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div class="space-y-6 bg-slate-50 dark:bg-zinc-900 p-8 rounded-3xl border border-slate-200 dark:border-zinc-800">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Главный офис:</div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">г. Ташкент, ул. Амира Темура, 107Б</p>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Горный офис и ресепшн:</div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">пос. Чарвак, ул. Сайхон, 14</p>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Горячая линия:</div>
+              <p class="text-base font-bold text-blue-600 dark:text-white">+998 (71) 200-88-99 / +998 (90) 123-45-67</p>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Telegram & WhatsApp:</div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">@dachabron_uz (круглосуточный бот и менеджер)</p>
+            </div>
+          </div>
+
+          <!-- Contact Feedback Form -->
+          <form onsubmit="event.preventDefault(); alert('Спасибо за обращение! Менеджер свяжется с вами в течение 10 минут.'); this.reset();" class="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Напишите нам сообщение</h3>
+            <div>
+              <label class="text-xs font-semibold text-slate-600 dark:text-zinc-400 block mb-1">Ваше имя</label>
+              <input type="text" required placeholder="Введите ваше имя" class="w-full text-sm px-4 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-600 dark:text-zinc-400 block mb-1">Номер телефона</label>
+              <input type="tel" required placeholder="+998 90 123 45 67" class="w-full text-sm px-4 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-600 dark:text-zinc-400 block mb-1">Ваш вопрос или пожелание</label>
+              <textarea rows="3" required placeholder="Какая дача вас интересует? На какие даты?" class="w-full text-sm px-4 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <button type="submit" class="w-full btn-primary py-3">
+              Отправить сообщение
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ----------------- DEDICATED CHECKOUT PAGE (NOT IN NAVBAR!) ----------------- -->
+    <div id="page-checkout" class="page-view hidden py-12 bg-slate-50/60 dark:bg-black min-h-screen">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-8">
+          <button onclick="navigateTo('catalog')" class="text-xs font-semibold text-blue-600 dark:text-zinc-300 hover:underline flex items-center gap-1 mb-2">
+            &larr; Вернуться в каталог
+          </button>
+          <h1 class="text-3xl font-black text-slate-900 dark:text-white" data-i18n="checkoutTitle">Оформление бронирования</h1>
+          <p class="text-sm text-slate-500 dark:text-zinc-400" data-i18n="checkoutSubtitle">Заполните контакты для подтверждения и отправки заявки в систему</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Checkout Form -->
+          <div class="lg:col-span-7 bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+            <form onsubmit="submitBookingOrder(event)" class="space-y-4">
+              
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-zinc-400 mb-1.5" data-i18n="checkoutClientName">
+                  Введите ваше имя:
+                </label>
+                <input 
+                  type="text" 
+                  id="checkoutNameInput" 
+                  required 
+                  placeholder="Имя Фамилия"
+                  class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-zinc-400 mb-1.5" data-i18n="checkoutClientPhone">
+                  Введите свой номер телефона:
+                </label>
+                <input 
+                  type="tel" 
+                  id="checkoutPhoneInput" 
+                  required 
+                  placeholder="+998 90 123 45 67"
+                  class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-zinc-400 mb-1.5">
+                  Дополнительные пожелания / комментарий:
+                </label>
+                <textarea 
+                  id="checkoutNotesInput" 
+                  rows="3" 
+                  placeholder="Например: нужен ранний заезд, подготовка мангала, трансфер..."
+                  class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+              </div>
+
+              <div class="pt-4">
+                <button type="submit" class="w-full btn-primary py-3.5 text-base shadow-lg shadow-blue-500/25">
+                  <span data-i18n="checkoutConfirmBtn">Подтвердить бронирование</span>
+                  <span>&rarr;</span>
+                </button>
+                <p class="text-[11px] text-center text-slate-400 mt-3">
+                  После подтверждения заявка сразу поступит администратору в раздел "Забронированные".
+                </p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Order Summary Card -->
+          <div class="lg:col-span-5 bg-white dark:bg-zinc-900 p-6 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm space-y-4">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-black">
+              <img id="checkoutDachaImg" src="" alt="Dacha" class="w-full h-full object-cover">
+            </div>
+
+            <div>
+              <span class="text-[10px] uppercase tracking-wider font-bold text-blue-600 dark:text-blue-400" data-i18n="checkoutSelectedDacha">Выбранная дача:</span>
+              <h3 id="checkoutDachaName" class="text-lg font-black text-slate-900 dark:text-white"></h3>
+              <p id="checkoutDachaLocation" class="text-xs text-slate-500 dark:text-zinc-400 mt-0.5"></p>
+            </div>
+
+            <div class="border-t border-slate-100 dark:border-zinc-800 pt-3 space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-500" data-i18n="checkoutDaysCount">Количество суток:</span>
+                <span id="checkoutDachaDays" class="font-bold text-slate-900 dark:text-white"></span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Базовый тариф:</span>
+                <span id="checkoutDachaRate" class="font-bold text-slate-900 dark:text-white"></span>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-zinc-700 pt-4 flex justify-between items-baseline">
+              <span class="text-sm font-bold text-slate-700 dark:text-zinc-300" data-i18n="checkoutTotalToPay">Итого к оплате:</span>
+              <span id="checkoutTotalPrice" class="text-2xl font-black text-blue-600 dark:text-white"></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ----------------- ADMIN DASHBOARD (PROTECTED: NOT IN NAV!) ----------------- -->
+    <div id="page-admin" class="page-view hidden py-10 bg-slate-50 dark:bg-black min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Admin Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 text-white dark:bg-zinc-900 dark:border dark:border-zinc-800 mb-8 shadow-xl">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center font-bold text-2xl">
+              ⚙️
+            </div>
+            <div>
+              <h1 class="text-2xl font-black tracking-tight" data-i18n="adminDashboardTitle">Панель управления Dacha Bron</h1>
+              <p class="text-xs text-slate-400">Управление дачами, ценами, удалением, восстановлением и бронями</p>
+            </div>
+          </div>
+
+          <button onclick="logoutAdmin()" class="btn-primary text-xs py-2 px-4 bg-red-600 hover:bg-red-700 text-white" data-i18n="adminLogout">
+            Выйти из панели
+          </button>
+        </div>
+
+        <!-- Admin Tabs Navigation -->
+        <div class="flex flex-wrap gap-2 border-b border-slate-200 dark:border-zinc-800 pb-4 mb-8">
+          <button id="admin-btn-dachas" onclick="switchAdminTab('dachas')" class="admin-nav-btn px-4 py-2.5 rounded-xl text-sm font-bold transition bg-blue-600 text-white dark:bg-white dark:text-black" data-i18n="adminTabDachas">
+            🏡 Все дачи
+          </button>
+          <button id="admin-btn-add" onclick="switchAdminTab('add')" class="admin-nav-btn px-4 py-2.5 rounded-xl text-sm font-bold transition text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800" data-i18n="adminTabAdd">
+            ➕ Добавить дачу
+          </button>
+          <button id="admin-btn-deleted" onclick="switchAdminTab('deleted')" class="admin-nav-btn px-4 py-2.5 rounded-xl text-sm font-bold transition text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800" data-i18n="adminTabDeleted">
+            🗑️ Удаленные дачи
+          </button>
+          <button id="admin-btn-bookings" onclick="switchAdminTab('bookings')" class="admin-nav-btn px-4 py-2.5 rounded-xl text-sm font-bold transition text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800" data-i18n="adminTabBookings">
+            📬 Забронированные
+          </button>
+        </div>
+
+        <!-- Admin Tab Pane 1: All Active Dachas -->
+        <div id="admin-pane-dachas" class="admin-tab-pane">
+          <div id="adminDachasList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Admin Tab Pane 2: Add New Dacha Form -->
+        <div id="admin-pane-add" class="admin-tab-pane hidden max-w-3xl">
+          <form id="adminAddDachaForm" onsubmit="adminAddNewDacha(event)" class="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm space-y-4">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Добавить новую дачу</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Название дачи</label>
+                <input type="text" id="addDachaName" required placeholder="Например: Вилла Бричмулла Резиденс" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Категория</label>
+                <select id="addDachaCategory" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+                  <option value="villa">Вилла (villa)</option>
+                  <option value="bolshiye">Большая дача (bolshiye)</option>
+                  <option value="sredniye">Средняя дача (sredniye)</option>
+                  <option value="malenkiye">Маленькая дача (malenkiye)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Цена за сутки ($)</label>
+                <input type="number" id="addDachaPrice" required min="10" placeholder="500" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Звезды / Рейтинг (1 - 5)</label>
+                <input type="number" id="addDachaStars" step="0.1" min="1" max="5" value="5" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Локация (Адрес)</label>
+              <input type="text" id="addDachaLocation" required placeholder="Например: Чарвак, ул. Сайхон, дом 14" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Ссылки на картинки (каждая ссылка с новой строки или через запятую)</label>
+              <textarea id="addDachaImages" rows="3" placeholder="https://images.unsplash.com/photo-1...&#10;https://images.unsplash.com/photo-2..." class="w-full text-xs font-mono px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Описание дачи</label>
+              <textarea id="addDachaDesc" rows="3" required placeholder="Опишите бассейн, сауну, комнаты, количество спален..." class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary py-3 px-8">
+              ➕ Добавить дачу в каталог
+            </button>
+          </form>
+        </div>
+
+        <!-- Admin Tab Pane 3: Deleted Dachas (Trash & Restore) -->
+        <div id="admin-pane-deleted" class="admin-tab-pane hidden">
+          <div id="adminDeletedList" class="space-y-4">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Admin Tab Pane 4: Booked Dachas & Messages -->
+        <div id="admin-pane-bookings" class="admin-tab-pane hidden">
+          <div id="adminBookingsList" class="space-y-4">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER WITH SECRET ADMIN LINK ==================== -->
+  <footer class="bg-slate-950 text-slate-300 dark:bg-black dark:text-zinc-400 border-t border-slate-800 dark:border-zinc-900 pt-16 pb-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Brand & Description -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🏠</span>
+            <span class="text-xl font-black text-white">DACHA BRON</span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed" data-i18n="footerAbout">
+            Сервис премиального бронирования загородных домов, дач и вилл в Ташкентской области (Чарвак, Чимган, Бричмулла).
+          </p>
+          <div class="text-xs text-slate-500">
+            Горячая линия: <span class="text-white font-bold">+998 71 200-88-99</span> (Круглосуточно)
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white" data-i18n="footerQuickLinks">Быстрые ссылки</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" onclick="navigateTo('home')" class="hover:text-white transition" data-i18n="navHome">Главная</a></li>
+            <li><a href="#catalog" onclick="navigateTo('catalog')" class="hover:text-white transition" data-i18n="navDachas">Каталог дач</a></li>
+            <li><a href="#about" onclick="navigateTo('about')" class="hover:text-white transition" data-i18n="navAbout">О нас</a></li>
+            <li><a href="#reviews" onclick="navigateTo('reviews')" class="hover:text-white transition" data-i18n="navReviews">Отзывы клиентов</a></li>
+            <li><a href="#contacts" onclick="navigateTo('contacts')" class="hover:text-white transition" data-i18n="navContacts">Контакты</a></li>
+          </ul>
+        </div>
+
+        <!-- Secret Admin Entry Button (Only in footer as requested) -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Для сотрудников</h4>
+          <p class="text-[11px] text-slate-500">
+            Вход в защищенную систему управления сайтом доступен только администраторам.
+          </p>
+          <!-- Footer Admin Button -->
+          <button 
+            id="footerAdminBtn"
+            onclick="openAdminAuthModal()" 
+            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition">
+            <span>🔐</span>
+            <span data-i18n="adminLink">Админка</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-zinc-500">
+        <div>&copy; 2026 Dacha Bron. <span data-i18n="footerRights">Все права защищены.</span></div>
+        <div class="mt-2 sm:mt-0 flex gap-4">
+          <span class="hover:text-slate-400 cursor-pointer">Политика конфиденциальности</span>
+          <span class="hover:text-slate-400 cursor-pointer">Правила проживания</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. AUTH MODAL (Login / Register) -->
+  <div id="authModal" class="modal-backdrop">
+    <div class="modal-content p-6 sm:p-8 relative">
+      <button onclick="closeModal('authModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg">✕</button>
+      
+      <div class="text-center mb-6">
+        <h3 id="authTitle" class="text-2xl font-bold text-slate-900 dark:text-white">Вход в аккаунт</h3>
+        <p class="text-xs text-slate-500 mt-1">Для бронирования дачи необходимо авторизоваться</p>
+      </div>
+
+      <form id="authForm" onsubmit="handleAuthSubmit(event)" data-mode="login" class="space-y-4">
+        
+        <div id="authNameField" class="hidden">
+          <label class="block text-xs font-semibold text-slate-600 dark:text-zinc-400 mb-1" data-i18n="authName">Ваше имя</label>
+          <input type="text" id="authNameInput" placeholder="Имя Фамилия" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 dark:text-zinc-400 mb-1" data-i18n="authEmail">Email или Телефон</label>
+          <input type="text" id="authEmailInput" required placeholder="+998 90 123 45 67" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 dark:text-zinc-400 mb-1" data-i18n="authPassword">Пароль</label>
+          <input type="password" id="authPasswordInput" required placeholder="••••••••" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+        </div>
+
+        <button type="submit" id="authSubmitBtn" class="w-full btn-primary py-3">
+          Войти
+        </button>
+
+        <div id="authToggleText" class="text-center text-xs text-slate-500 mt-3">
+          <a href="javascript:void(0)" onclick="toggleAuthMode('register')" class="text-blue-600 dark:text-blue-400 hover:underline">
+            Нет аккаунта? Зарегистрируйтесь
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. BOOKING DAYS SELECTOR MODAL (1-7 days + custom multiplier) -->
+  <div id="bookingModal" class="modal-backdrop">
+    <div class="modal-content p-6 sm:p-8 relative">
+      <button onclick="closeModal('bookingModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg">✕</button>
+      
+      <div class="mb-4">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Калькулятор аренды</span>
+        <h3 id="bookingModalDachaName" class="text-xl font-bold text-slate-900 dark:text-white"></h3>
+        <div class="text-xs text-slate-500 mt-0.5">Базовый тариф: <strong id="bookingModalBasePrice" class="text-slate-900 dark:text-white"></strong> в сутки</div>
+      </div>
+
+      <div class="my-6">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-zinc-400 mb-2" data-i18n="bookingModalTitle">
+          Выберите срок бронирования:
+        </label>
+        
+        <!-- Predefined 1 to 7 days grid -->
+        <div id="bookingDaysPills" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+          <!-- Injected by app.js (1 day, 2 days = 2x, etc.) -->
+        </div>
+
+        <!-- Button to expand custom days -->
+        <button type="button" onclick="toggleCustomDaysInput()" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 mt-2" data-i18n="moreDaysBtn">
+          <span>➕ Больше дней (ввести вручную)</span>
+        </button>
+
+        <!-- Custom Days Input (revealed on demand) -->
+        <div id="customDaysInputWrapper" class="hidden mt-3 p-3 rounded-xl bg-slate-50 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700">
+          <label class="block text-xs font-semibold text-slate-600 dark:text-zinc-300 mb-1" data-i18n="customDaysLabel">
+            Введите количество дней:
+          </label>
+          <input 
+            type="number" 
+            id="customDaysNumber" 
+            min="1" 
+            max="365" 
+            value="8" 
+            oninput="handleCustomDaysChange(this.value)"
+            class="w-full text-base font-bold px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-600 bg-white dark:bg-zinc-900 text-slate-900 dark:text-white"
+          />
+        </div>
+      </div>
+
+      <!-- Total summary calculation -->
+      <div class="p-4 rounded-xl bg-blue-50 dark:bg-zinc-800/80 border border-blue-100 dark:border-zinc-700 flex items-center justify-between mb-6">
+        <span class="text-xs font-bold text-slate-700 dark:text-zinc-300" data-i18n="totalPrice">Итоговая стоимость:</span>
+        <div id="bookingModalTotalCalc">
+          <!-- Injected by app.js -->
+        </div>
+      </div>
+
+      <button type="button" onclick="proceedToCheckoutFromModal()" class="w-full btn-primary py-3.5 text-sm font-bold">
+        <span data-i18n="proceedToCheckout">Перейти к бронированию</span>
+        <span>&rarr;</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- 3. ADMIN AUTH PASSWORD MODAL -->
+  <div id="adminAuthModal" class="modal-backdrop">
+    <div class="modal-content max-w-md p-6 sm:p-8 relative">
+      <button onclick="closeModal('adminAuthModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg">✕</button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white mx-auto flex items-center justify-center text-xl mb-2">
+          🔐
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="adminModalTitle">Вход в панель администратора</h3>
+        <p class="text-xs text-slate-500 mt-1">Доступ защищен паролем администратора</p>
+      </div>
+
+      <form onsubmit="checkAdminPassword(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 dark:text-zinc-400 mb-1">Пароль доступа</label>
+          <input 
+            type="password" 
+            id="adminPasswordInput" 
+            required 
+            placeholder="Введите пароль..."
+            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 font-mono"
+          />
+        </div>
+
+        <button type="submit" class="w-full btn-primary py-3" data-i18n="adminLoginBtn">
+          Войти в админку
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. DACHA DETAIL & REVIEWS MODAL -->
+  <div id="dachaDetailModal" class="modal-backdrop">
+    <div class="modal-content max-w-2xl p-6 sm:p-8 relative">
+      <button onclick="closeModal('dachaDetailModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg z-20">✕</button>
+      <div id="dachaDetailContent">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. ADMIN EDIT DACHA MODAL -->
+  <div id="adminEditModal" class="modal-backdrop">
+    <div class="modal-content max-w-xl p-6 sm:p-8 relative">
+      <button onclick="closeModal('adminEditModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg">✕</button>
+
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="adminEditTitle">Редактирование дачи</h3>
+
+      <form onsubmit="adminSaveEditedDacha(event)" class="space-y-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Название</label>
+            <input type="text" id="editDachaName" required class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Категория</label>
+            <select id="editDachaCategory" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+              <option value="villa">Вилла (villa)</option>
+              <option value="bolshiye">Большая дача (bolshiye)</option>
+              <option value="sredniye">Средняя дача (sredniye)</option>
+              <option value="malenkiye">Маленькая дача (malenkiye)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Цена за сутки ($)</label>
+            <input type="number" id="editDachaPrice" required class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Рейтинг (Звезды)</label>
+            <input type="number" step="0.1" id="editDachaStars" min="1" max="5" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Локация</label>
+          <input type="text" id="editDachaLocation" required class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Ссылки на картинки</label>
+          <textarea id="editDachaImages" rows="3" class="w-full text-xs font-mono px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 dark:text-zinc-400 mb-1">Описание</label>
+          <textarea id="editDachaDesc" rows="3" required class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-white"></textarea>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" onclick="closeModal('adminEditModal')" class="btn-outline text-xs py-2 px-4" data-i18n="adminCancelBtn">Отмена</button>
+          <button type="submit" class="btn-primary text-xs py-2 px-5" data-i18n="adminSaveBtn">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. ORDER SUCCESS MODAL -->
+  <div id="checkoutSuccessModal" class="modal-backdrop">
+    <div class="modal-content max-w-md p-8 text-center relative">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400 mx-auto flex items-center justify-center text-3xl mb-4">
+        ✓
+      </div>
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2" data-i18n="checkoutSuccessTitle">Заявка успешно отправлена!</h3>
+      <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-4" data-i18n="checkoutSuccessText">
+        Ваше бронирование зарегистрировано и поступило в админку. Администратор свяжется с вами по указанному телефону.
+      </p>
+      <div class="p-3 bg-slate-100 dark:bg-zinc-800 rounded-xl text-xs font-mono text-slate-700 dark:text-zinc-300 mb-6">
+        Номер заказа: <strong id="successOrderId" class="text-blue-600 dark:text-white"></strong>
+      </div>
+      <button onclick="closeModal('checkoutSuccessModal'); navigateTo('catalog')" class="w-full btn-primary py-3">
+        Вернуться в каталог
+      </button>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

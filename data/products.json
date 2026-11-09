@@ -1,0 +1,218 @@
+[
+  {
+    "id": "dacha-1",
+    "name": "Вилла Чарвак Панорама Luxury",
+    "category": "villa",
+    "price": 500,
+    "stars": 5,
+    "description": "Роскошная вилла с панорамным видом на Чарвакское водохранилище. Огромный бассейн с подогревом, финская сауна, бильярдный зал, зона барбекю и лаунж-терраса с видом на горы. Идеально для элитного отдыха.",
+    "location": "Чарвак, ул. Сайхон, дом 14",
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["Бассейн с подогревом", "Сауна", "Бильярд", "Wi-Fi", "Зона BBQ", "Вид на озеро"],
+    "maxGuests": 14,
+    "isBooked": false,
+    "bookedDaysRemaining": 0,
+    "isDeleted": false,
+    "comments": [
+      {
+        "id": "c1",
+        "author": "Сардор Алимов",
+        "rating": 5,
+        "date": "15.10.2026",
+        "text": "Потрясающий вид на Чарвак! Бассейн теплый, дом чистый и уютный. Отдохнули с семьей на высшем уровне!"
+      },
+      {
+        "id": "c2",
+        "author": "Elena V.",
+        "rating": 5,
+        "date": "10.10.2026",
+        "text": "Лучшая вилла в районе Сайхон! Сауна отличная, бильярд в отличном состоянии."
+      }
+    ]
+  },
+  {
+    "id": "dacha-2",
+    "name": "Вилла Бричмулла Резиденс",
+    "category": "villa",
+    "price": 600,
+    "stars": 5,
+    "description": "Премиальная двухуровневая вилла в живописной Бричмулле. 5 спален, бассейн инфинити с видом на горные вершины, летняя кухня, каминный зал и караоке система.",
+    "location": "Бричмулла, ул. Тог Багри, дом 28",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["Инфинити бассейн", "Караоке", "Камин", "5 спален", "Летняя кухня", "Детская площадка"],
+    "maxGuests": 16,
+    "isBooked": true,
+    "bookedDaysRemaining": 3,
+    "isDeleted": false,
+    "comments": [
+      {
+        "id": "c3",
+        "author": "Джамшид",
+        "rating": 5,
+        "date": "02.10.2026",
+        "text": "Очень стильный дизайн, всё новое. Горы вокруг невероятные."
+      }
+    ]
+  },
+  {
+    "id": "dacha-3",
+    "name": "Большая Дача Чимган Ривер",
+    "category": "bolshiye",
+    "price": 400,
+    "stars": 4.9,
+    "description": "Просторная большая дача для больших компаний и семейных торжеств. 6 спален, 2 банкетных зала, закрытый теплый бассейн и открытый летний бассейн, настольный теннис.",
+    "location": "Чимган, ул. Сой Бойи, дом 7",
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["2 бассейна (летний/зимний)", "Настольный теннис", "Топчан у реки", "Казан/Мангал", "Парковка на 6 авто"],
+    "maxGuests": 20,
+    "isBooked": false,
+    "bookedDaysRemaining": 0,
+    "isDeleted": false,
+    "comments": [
+      {
+        "id": "c4",
+        "author": "Азиз Рахимов",
+        "rating": 5,
+        "date": "28.09.2026",
+        "text": "Отмечали день рождения большой компанией. Места хватило всем с избытком, мангал супер!"
+      }
+    ]
+  },
+  {
+    "id": "dacha-4",
+    "name": "Большая Дача Бочка Гранд",
+    "category": "bolshiye",
+    "price": 380,
+    "stars": 4.8,
+    "description": "Большой гостевой комплекс рядом с знаменитыми ресторанами Бочки. Большая зеленая территория, сад с фруктовыми деревьями, большой глубокий бассейн, бильярд, турецкий хаммам.",
+    "location": "Бочка, ул. Чарвак Йули, дом 52",
+    "images": [
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["Турецкий хаммам", "Большой сад", "Бильярд", "Качели", "Зона для плова"],
+    "maxGuests": 18,
+    "isBooked": false,
+    "bookedDaysRemaining": 0,
+    "isDeleted": false,
+    "comments": []
+  },
+  {
+    "id": "dacha-5",
+    "name": "Средняя Дача Юсуфхона Комфорт",
+    "category": "sredniye",
+    "price": 280,
+    "stars": 4.7,
+    "description": "Уютная средняя дача в поселке Юсуфхона в 5 минутах от воды. 3 спальни, фильтруемый бассейн, топчан под тенью орешин, мангальная зона, Wi-Fi и Smart TV.",
+    "location": "Юсуфхона, ул. Набережная, дом 19",
+    "images": [
+      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["Бассейн с фильтром", "Топчан", "Smart TV", "Мангал", "Близко к озеру"],
+    "maxGuests": 10,
+    "isBooked": false,
+    "bookedDaysRemaining": 0,
+    "isDeleted": false,
+    "comments": [
+      {
+        "id": "c5",
+        "author": "Малика",
+        "rating": 5,
+        "date": "18.09.2026",
+        "text": "Очень уютно, тихое место, вода чистейшая в бассейне. Обязательно вернемся!"
+      }
+    ]
+  },
+  {
+    "id": "dacha-6",
+    "name": "Средняя Дача Хумсан Вудс",
+    "category": "sredniye",
+    "price": 250,
+    "stars": 4.9,
+    "description": "Экологичный дом из сруба в живописном Хумсане. Свежий горный воздух, кристальная родниковая вода, уютный камин, летний бассейн и баня на дровах.",
+    "location": "Хумсан, ул. Арчазор, дом 3",
+    "images": [
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["Деревянный сруб", "Баня на дровах", "Камин", "Родниковая вода", "Лесной массив"],
+    "maxGuests": 8,
+    "isBooked": true,
+    "bookedDaysRemaining": 5,
+    "isDeleted": false,
+    "comments": [
+      {
+        "id": "c6",
+        "author": "Тимур К.",
+        "rating": 5,
+        "date": "05.10.2026",
+        "text": "Воздух в Хумсане сказочный! Баня на дровах просто восторг."
+      }
+    ]
+  },
+  {
+    "id": "dacha-7",
+    "name": "Маленькая Дача A-Frame Чимган",
+    "category": "malenkiye",
+    "price": 160,
+    "stars": 4.9,
+    "description": "Стильный треугольный домик в стиле A-Frame с панорамными стеклами. Идеально для романтического отдыха вдвоем или небольшой семьи до 4 человек. Подогреваемая купель фурако и костровая зона.",
+    "location": "Чимган, ул. Тог Шамоли, дом 11",
+    "images": [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["A-Frame стиль", "Теплая купель фурако", "Костровая зона", "Проектор для кино", "Wi-Fi"],
+    "maxGuests": 4,
+    "isBooked": false,
+    "bookedDaysRemaining": 0,
+    "isDeleted": false,
+    "comments": [
+      {
+        "id": "c7",
+        "author": "Нигина",
+        "rating": 5,
+        "date": "12.10.2026",
+        "text": "Невероятно романтично! Вечером смотрели фильмы на проекторе и сидели в теплой купели под звездами."
+      }
+    ]
+  },
+  {
+    "id": "dacha-8",
+    "name": "Маленькая Дача Чарвак Кози",
+    "category": "malenkiye",
+    "price": 130,
+    "stars": 4.6,
+    "description": "Компактный и экономичный домик на берегу реки с небольшим бассейном, уютной беседкой и барбекю. Отличный выбор для бюджетного душевного отдыха.",
+    "location": "Чарвак, ул. Сой Киргоги, дом 8А",
+    "images": [
+      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "features": ["Компактный бассейн", "Мангал", "Беседка", "Тихий район", "Парковка на 2 авто"],
+    "maxGuests": 5,
+    "isBooked": false,
+    "bookedDaysRemaining": 0,
+    "isDeleted": false,
+    "comments": []
+  }
+]

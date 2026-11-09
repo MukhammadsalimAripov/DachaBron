@@ -1,0 +1,359 @@
+/* Custom styles for Dacha Bron */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Light Mode Palette: Blue and White */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f7ff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fbff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --accent-primary: #2563eb;       /* Royal Blue */
+  --accent-secondary: #1d4ed8;     /* Deep Blue */
+  --accent-light: #dbeafe;         /* Soft Blue */
+  --accent-glow: rgba(37, 99, 235, 0.15);
+  --badge-booked-bg: #fee2e2;
+  --badge-booked-text: #b91c1c;
+  --navbar-bg: rgba(255, 255, 255, 0.92);
+  --footer-bg: #0f172a;
+  --footer-text: #f8fafc;
+  --modal-overlay: rgba(15, 23, 42, 0.6);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(37, 99, 235, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -3px rgba(37, 99, 235, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+html.dark {
+  /* Dark Mode Palette: Pure Black, Slate Dark & White */
+  --bg-primary: #09090b;
+  --bg-secondary: #121215;
+  --bg-card: #18181b;
+  --bg-card-hover: #222227;
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --border-color: #27272a;
+  --accent-primary: #ffffff;       /* Pure White accent in Dark Mode */
+  --accent-secondary: #e4e4e7;     /* Light Gray */
+  --accent-light: #27272a;
+  --accent-glow: rgba(255, 255, 255, 0.1);
+  --badge-booked-bg: #450a0a;
+  --badge-booked-text: #fca5a5;
+  --navbar-bg: rgba(9, 9, 11, 0.92);
+  --footer-bg: #000000;
+  --footer-text: #f4f4f5;
+  --modal-overlay: rgba(0, 0, 0, 0.85);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Navigation */
+.navbar-glass {
+  background: var(--navbar-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Dropdown Menu for Dachas */
+.nav-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown,
+.nav-dropdown-wrapper:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Custom Card styling */
+.dacha-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.dacha-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+/* Image Slider inside card */
+.slider-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.dacha-card:hover .slider-btn,
+.slider-container:hover .slider-btn {
+  opacity: 0.9;
+}
+
+.slider-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.slider-btn.prev {
+  left: 8px;
+}
+
+.slider-btn.next {
+  right: 8px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease;
+}
+
+.slider-dot.active {
+  background-color: #ffffff;
+  width: 18px;
+  border-radius: 9999px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+html.dark .btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-outline {
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-primary);
+  font-weight: 500;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-primary);
+}
+
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: var(--modal-overlay);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Badges */
+.badge-booked {
+  background-color: var(--badge-booked-bg);
+  color: var(--badge-booked-text);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.badge-available {
+  background-color: #dcfce7;
+  color: #15803d;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+html.dark .badge-available {
+  background-color: #052e16;
+  color: #86efac;
+}
+
+/* Days picker card selector */
+.day-pill {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-pill:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-secondary);
+}
+
+.day-pill.selected {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+html.dark .day-pill.selected {
+  background-color: #27272a;
+  color: #ffffff;
+  border-color: #ffffff;
+}
